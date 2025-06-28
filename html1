@@ -1,4 +1,7 @@
-    position: fixed;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+position: fixed;
             top: 20px;
             right: 20px;
             background-color: #5865F2;
