@@ -51,3 +51,42 @@ position: fixed;
             align-items: center;
             position: relative;
             overflow-x: hidden;
+  const [clicked, setClicked] = useState(false);
+
+  const handleGiveStar = () => {
+    setClicked(true);
+    setTimeout(() => {
+      window.location.href = "https://github.com/tachibanayu24/dev-toolkit";
+    }, 1000);
+  };
+
+  return (
+    <div
+      className={`flex justify-center items-center w-screen h-screen relative ${
+        clicked && "cursor-none"
+      }`}
+    >
+      {clicked && (
+        // ohNoはthemingしているカスタムのアニメーションです
+        <div
+          className={`animate-ohNo h-[28px] w-[137.25px] border-solid border-red-500 border-4 absolute right-10 top-20`}
+        >
+          <img
+            className="absolute top-2 left-10"
+            // macOSのポインタの画像をエンコードしたものです
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAVCAMAAABBhy+7AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAA+VBMVEUAAAAAAAD7+/sAAAD09PQAAAAAAAD09PTz8/PS0tJqampubm5+fn6np6cAAAD19fXw8PD39/cJCQkAAAAAAAAAAAAAAAD19fWzs7OgoKDX19cAAAD+/v6ysrIAAAAICAj29vb09PQAAAAAAADFxcUAAAAAAADR0dH8/Py2trYAAAAAAAAAAABRUVH29vb39/fJycni4uLp6emjo6MHBwcAAAAAAAAAAAD////T09MUFBTS0tIAAAAXFxfb29sbGxseHh4aGhrr6+vv7+/39/c5OTni4uIKCgqurq5BQUFmZmZDQ0PQ0NDW1tY9PT1tbW2np6cgICCioqIFyGmYAAAAOHRSTlMAAooIjg4QiH6dTUpBMQT92N4bFBILA/t4aU0B+3AgIt6zBQ1lGwqE/CMGCQcp9txCpsJpJQ8iGe73bXgAAAABYktHRACIBR1IAAAACXBIWXMAAAsSAAALEgHS3X78AAAArUlEQVQY003P1xKCMBRFUaKCvSuWWFFsYG9Rr1jA3v3/jzGMwOS8rac9h0MuxDFzEw9rnixYC2S5YiwQYE0Ja82xSdhoXsSQ2ocYOrZo26Zlk1vY7XXdINSUh+MJzv5AMBSOUF6isSvc4olkKi1SZrK5O8AjLyKEOaFQLJUrT3hVJTNUq8sNofmGT6uNKTu8gtVu72v0B2YXi5hDqeFoPJk6txR5NuclbBOpyh8/ou0enbQh1QcAAAAASUVORK5CYII="
+          />
+        </div>
+      )}
+
+      <div>
+        <button
+          className={`bg-yellow-400 p-4 rounded-full shadow-lg font-bold ${
+            clicked && "cursor-none"
+          }`}
+          onClick={handleGiveStar}
+        >
+          スターして！
+        </button>
+      </div>
+    </div>
